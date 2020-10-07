@@ -47,13 +47,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BusinessLibrary">
-      <HintPath>C:\Users\YOEKISOFTDEV2\source\repos\Reconcilition_WebApi\Reconciliation_WebAPI\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
+      <HintPath>..\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Encryptions">
-      <HintPath>..\EntityDAL\bin\Debug\Encryptions.dll</HintPath>
+      <HintPath>C:\Users\Rock\Downloads\Encryptions.dll</HintPath>
     </Reference>
     <Reference Include="EntityDAL">
-      <HintPath>C:\Users\YOEKISOFTDEV2\source\repos\Reconcilition_WebApi\Reconciliation_WebAPI\EntityDAL\bin\Debug\EntityDAL.dll</HintPath>
+      <HintPath>..\EntityDAL\bin\Debug\EntityDAL.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
