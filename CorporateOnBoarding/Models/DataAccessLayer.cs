@@ -1,4 +1,4 @@
-﻿using BusinessLibrary;
+using BusinessLibrary;
 using EntityDAL;
 using System;
 using System.Collections.Generic;
@@ -70,6 +70,64 @@ namespace CorporateOnBoarding.Models
         {
             try
             {
+                string @XmlCorporateEntity = "";
+                @XmlCorporateEntity = "<dtXml>";
+
+                @XmlCorporateEntity += "<dtXml ";
+                @XmlCorporateEntity += " CustomerName=" + @"""" + SaveRequest.txtCustomerName + @"""";
+                @XmlCorporateEntity += " CustomerAddress=" + @"""" + SaveRequest.txtCustomerAddress + @"""";
+                // @XmlCorporateEntity += " BankID=" + @"""" + SaveRequest.txtCustomerAddress + @"""";
+                // @XmlCorporateEntity += " SubMemberBankID=" + @"""" + SaveRequest.txtCustomerAddress + @"""";
+                @XmlCorporateEntity += " Country=" + @"""" + SaveRequest.ddlCountry  + @"""";
+                @XmlCorporateEntity += " State=" + @"""" + SaveRequest.ddlState + @"""";
+                @XmlCorporateEntity += " City=" + @"""" + SaveRequest.ddlCity + @"""";
+                @XmlCorporateEntity += " UtilityCodeFirst=" + @"""" + SaveRequest.txtUtilityCode + @"""";
+                @XmlCorporateEntity += " UtilityCodeSec=" + @"""" + SaveRequest.txtUtilityCode + @"""";
+                @XmlCorporateEntity += " UtilityCodeThird=" + @"""" + SaveRequest.txtUtilityCode + @"""";
+                @XmlCorporateEntity += " UtilityCodeFourth=" + @"""" + SaveRequest.txtUtilityCode + @"""";
+                // @XmlCorporateEntity += " BusinessSegmentCode=" + @"""" + SaveRequest.txtCustomerAddress + @"""";
+                // @XmlCorporateEntity += " RMID=" + @"""" + SaveRequest.txtCustomerAddress + @"""";
+                @XmlCorporateEntity += " PSMID=" + @"""" + SaveRequest.ddlPSM + @"""";
+                @XmlCorporateEntity += " ContactPersonFirst=" + @"""" + SaveRequest.txtContactPerson1 + @"""";
+                @XmlCorporateEntity += " ContactPersonDesg=" + @"""" + SaveRequest.txtContactPersonDesignation + @"""";
+                @XmlCorporateEntity += " ContactNo=" + @"""" + SaveRequest.txtContactNo + @"""";
+                @XmlCorporateEntity += " FAX=" + @"""" + SaveRequest.txtFAX + @"""";
+                @XmlCorporateEntity += " Arrangement=" + @"""" + SaveRequest.txtArrangement + @"""";
+                @XmlCorporateEntity += " PickUpPoint=" + @"""" + SaveRequest.txtPickUpPoint + @"""";
+                @XmlCorporateEntity += " Location=" + @"""" + SaveRequest.txtLocation + @"""";
+                @XmlCorporateEntity += " ContactPesonSecond=" + @"""" + SaveRequest.txtContactPerson2 + @"""";
+                @XmlCorporateEntity += " ContactPersonName=" + @"""" + SaveRequest.txtContactPersonName + @"""";
+                @XmlCorporateEntity += " CustomerEmail=" + @"""" + SaveRequest.txtCustomerEmail + @"""";
+                // @XmlCorporateEntity += " EntityId=" + @"""" + SaveRequest.txtCustomerAddress + @"""";
+                //  @XmlCorporateEntity += " AppId=" + @"""" + SaveRequest.txtCustomerAddress + @"""";
+                // @XmlCorporateEntity += " TokenID=" + @"""" + SaveRequest.txtCustomerAddress + @"""";
+
+
+
+                @XmlCorporateEntity += " />";
+
+                @XmlCorporateEntity += "</dtXml>";
+
+
+                string @XmlCorporateFinancial = "";
+                @XmlCorporateFinancial = "<dtXml>";
+
+                @XmlCorporateFinancial += "<dtXml ";
+                @XmlCorporateFinancial += " PAN=" + @"""" + SaveRequest.txtPAN + @"""";
+                @XmlCorporateFinancial += " TAN=" + @"""" + SaveRequest.txtTAN + @"""";
+                // @XmlCorporateEntity += " BankID=" + @"""" + SaveRequest.txtCustomerAddress + @"""";
+                // @XmlCorporateEntity += " SubMemberBankID=" + @"""" + SaveRequest.txtCustomerAddress + @"""";
+                @XmlCorporateFinancial += " GST=" + @"""" + SaveRequest.txtGST + @"""";
+                @XmlCorporateFinancial += " AHRM=" + @"""" + SaveRequest.ddlAHRM + @"""";
+
+                @XmlCorporateFinancial += " AHPSM=" + @"""" + SaveRequest.ddlAHPSM + @"""";
+                @XmlCorporateFinancial += " />";
+                @XmlCorporateFinancial += "</dtXml>";
+
+
+
+                //var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<Country>().Execute("@QueryType", "@XmlCorporateEntity", "@XmlCorporateFinancial", "SaveData", @XmlCorporateEntity,@XmlCorporateFinancial));
+
                 //---- Save Service Offered XML Code -------------//
 
                 string @XmlPhysicalMandateData = "";
@@ -270,7 +328,7 @@ namespace CorporateOnBoarding.Models
                 //---- End Save Billing/Other Details XML Code -------------//
 
 
-                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<Country>().Execute("@QueryType", "@BankID", "@SubMemberBank", "@XmlPhysicalMandateData", "@XmlEMandateData", "@XmlAadharMandateData", "@XmlDirectDebitMandateData", "@XmlDebitPresentationData", "@XmlUPICollectionData", "@XmlBBPSData", "@XmlAPBSData", "@XmlBilling_OtherDetailsData", "@AppId", "@EntityId", "@UserId", "SaveData", "1", "2", @XmlPhysicalMandateData, @XmlEMandateData, @XmlAadharMandateData, @XmlDirectDebitMandateData, @XmlDebitPresentationData, @XmlUPICollectionData, @XmlBBPSData, @XmlAPBSData, @XmlBilling_OtherDetailsData, "123456", "2", "2"));
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<Country>().Execute("@QueryType", "@BankID", "@SubMemberBank", "@XmlPhysicalMandateData", "@XmlEMandateData", "@XmlAadharMandateData", "@XmlDirectDebitMandateData", "@XmlDebitPresentationData", "@XmlUPICollectionData", "@XmlBBPSData", "@XmlAPBSData", "@XmlBilling_OtherDetailsData", "@AppId", "@EntityId", "@UserId","@XmlCorporateEntity", "@XmlCorporateFinancial", "SaveData", "1", "2", @XmlPhysicalMandateData, @XmlEMandateData, @XmlAadharMandateData, @XmlDirectDebitMandateData, @XmlDebitPresentationData, @XmlUPICollectionData, @XmlBBPSData, @XmlAPBSData, @XmlBilling_OtherDetailsData, "123456", "2", "2", @XmlCorporateEntity,@XmlCorporateFinancial));
                 //var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<Country>().Execute("@QueryType", "@BankID", "@SubMemberBank", "@XmlPhysicalMandateData", "@XmlEMandateData", "@XmlAadharMandateData", "@XmlDirectDebitMandateData", "@XmlDebitPresentationData", "@XmlUPICollectionData", "@XmlBBPSData", "@XmlAPBSData", "@AppId", "@EntityId","@UserId", "BindPSM",SaveRequest.BankId, SaveRequest.SubMemberId, @XmlPhysicalMandateData, @XmlEMandateData, @XmlAadharMandateData, @XmlDirectDebitMandateData, @XmlDebitPresentationData, @XmlUPICollectionData, @XmlBBPSData, @XmlAPBSData, SaveRequest.UtilityCode, SaveRequest.UtilityCode, Dbsecurity.Decrypt(SaveRequest.UtilityCode), Dbsecurity.Decrypt(SaveRequest.EntityId), Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(SaveRequest.UserId.Replace("_", "%")))));
                 return Result;
             }

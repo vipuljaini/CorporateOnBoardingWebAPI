@@ -22,25 +22,31 @@ namespace CorporateOnBoarding.Models
         //public string AppId { get; set; }
         public string UserId { get; set; }
         public string EntityId { get; set; }
+
         public string BankId { get; set; }
         public string SubMemberId { get; set; }
-        public string CustomerName { get; set; }
-        public string UtilityCode { get; set; }
-        public string CustomerAddress { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public string Country { get; set; }
-        public string PSMName { get; set; }
-        public string ContactPersonFirst { get; set; }
-        public string ContactPersonDesignation { get; set; }
-        public string ContactNo { get; set; }
-        public string FAX { get; set; }
-        public string Arrangement { get; set; }
-        public string PickUpPoint { get; set; }
-        public string Location { get; set; }
-        public string ContactPersonSecond { get; set; }
-        public string ContactPersonName { get; set; }
-        public string CustomerEmail { get; set; }
+        public string txtCustomerName { get; set; }
+        public string txtUtilityCode { get; set; }
+        public string txtCustomerAddress { get; set; }
+        public string ddlCity { get; set; }
+        public string ddlState { get; set; }
+        public string ddlCountry { get; set; }
+        public string ddlPSM { get; set; }
+        public string txtContactPerson1 { get; set; }
+        public string txtContactPersonDesignation { get; set; }
+        public string txtContactNo { get; set; }
+        public string txtFAX { get; set; }
+        public string txtArrangement { get; set; }
+        public string txtPickUpPoint { get; set; }
+        public string txtLocation { get; set; }
+        public string txtContactPerson2 { get; set; }
+        public string txtContactPersonName { get; set; }
+        public string txtCustomerEmail { get; set; }
+        public string txtTAN { get; set; }
+        public string txtGST { get; set; }
+        public string ddlAHPSM { get; set; }
+        public string ddlAHRM { get; set; }
+        public string txtPAN { get; set; }
 
         //---- Save Service Offered Fields -------------//
         public string ddlPhysicalMandate { get; set; }
@@ -113,6 +119,7 @@ namespace CorporateOnBoarding.Models
         public string Settlement { get; set; }
 
         //---- End Save Billing/Other Details Fields -------------//
+
 
     }
 }
