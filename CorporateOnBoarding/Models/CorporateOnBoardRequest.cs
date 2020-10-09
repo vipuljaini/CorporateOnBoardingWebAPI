@@ -17,6 +17,21 @@ namespace CorporateOnBoarding.Models
         public string SubMemberId { get; set; }
     }
 
+    public class BindAllCorporateGrid
+    {
+        public Nullable<Int64> TCEDID { get; set; }
+        public string BankName { get; set; }
+        public string SubBankName { get; set; }
+        public string CustomerName { get; set; }
+        public string UtilityCode { get; set; }
+        public string CustomerAddress { get; set; }
+        public string RMName { get; set; }
+        public string BusinessSegmentcode { get; set; }
+        public string ContactPersonName { get; set; }
+        public string ContactPersonDesg { get; set; }
+        public string ContactNo { get; set; }
+    }
+
     public class DataSaveRequest
     {
         //public string AppId { get; set; }
