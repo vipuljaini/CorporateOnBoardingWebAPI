@@ -17,6 +17,30 @@ namespace CorporateOnBoarding.Models
         public string SubMemberId { get; set; }
     }
 
+    public class Success
+    {
+        public Nullable<Int32> Result { get; set; }
+       
+    }
+    public class BindBank
+    {
+        public Nullable<double> BankId { get; set; }
+        public string BankName { get; set; }
+
+    }
+    public class BindBusinessSegmentCode
+    {
+        public Nullable<Int32> BusinessSegmentCodeId { get; set; }
+        public string BusinessSegmentCodeName { get; set; }
+
+    }
+    public class BindSettlement
+    {
+        public Nullable<Int32> SettlementId { get; set; }
+        public string SettlementName { get; set; }
+
+    }
+
     public class BindAllCorporateGrid
     {
         public Nullable<Int64> TCEDID { get; set; }
@@ -34,11 +58,12 @@ namespace CorporateOnBoarding.Models
 
     public class DataSaveRequest
     {
-        //public string AppId { get; set; }
+        public string AppId { get; set; }
         public string UserId { get; set; }
         public string EntityId { get; set; }
 
         public string BankId { get; set; }
+        public string BusinessSegmentCode { get; set; }
         public string SubMemberId { get; set; }
         public string txtCustomerName { get; set; }
         public string txtUtilityCode { get; set; }
