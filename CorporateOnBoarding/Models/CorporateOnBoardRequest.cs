@@ -47,6 +47,7 @@ namespace CorporateOnBoarding.Models
         public string ddlAHPSM { get; set; }
         public string ddlAHRM { get; set; }
         public string txtPAN { get; set; }
+        public List<ContactPersonArray> ContactPersonArray { get; set; }
 
         //---- Save Service Offered Fields -------------//
         public string ddlPhysicalMandate { get; set; }
@@ -121,5 +122,13 @@ namespace CorporateOnBoarding.Models
         //---- End Save Billing/Other Details Fields -------------//
 
 
+    }
+    public class ContactPersonArray
+    {
+        public string ContactPesonName { get; set; }
+        public string ContactPesonDesignation { get; set; }
+        public string ContactPesonContact { get; set; }
+        public string ContactPesonFax { get; set; }
+        public string ContactPesonAddress { get; set; }
     }
 }

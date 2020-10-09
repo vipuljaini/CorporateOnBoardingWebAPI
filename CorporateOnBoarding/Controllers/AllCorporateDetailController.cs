@@ -53,6 +53,24 @@ namespace CorporateOnBoarding.Controllers
 
 
         [HttpPost]
+        [Route("api/CorporateOnBoarding/BindRM")]
+        public Dictionary<string, object> BindRM([FromBody] PSMRequest bindRMDropdown)
+        {
+            return objCorporateOnBoarding.BindRM(bindRMDropdown);
+
+        }
+
+
+        [HttpPost]
+        [Route("api/CorporateOnBoarding/BindRegionalManager")]
+        public Dictionary<string, object> BindRegionalManager([FromBody] PSMRequest bindRegionalManagerDropdown)
+        {
+            return objCorporateOnBoarding.BindRegionalManager(bindRegionalManagerDropdown);
+
+        }
+
+
+        [HttpPost]
         [Route("api/CorporateOnBoarding/SaveData")]
         public Dictionary<string, object> SaveData([FromBody] DataSaveRequest SaveRequest)
         {
