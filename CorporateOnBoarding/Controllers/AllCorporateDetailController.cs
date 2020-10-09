@@ -86,5 +86,28 @@ namespace CorporateOnBoarding.Controllers
 
         }
 
+        [HttpGet]
+        [Route("api/CorporateOnBoarding/BindBank")]
+        public Dictionary<string, object> BindBank()
+        {
+            return objCorporateOnBoarding.BindBank();
+
+        }
+
+        [HttpGet]
+        [Route("api/CorporateOnBoarding/BindBusinessSegmentCode")]
+        public Dictionary<string, object> BindBusinessSegmentCode()
+        {
+            return objCorporateOnBoarding.BindBusinessSegmentCode();
+
+        }
+
+        [HttpGet]
+        [Route("api/CorporateOnBoarding/BindSettlement")]
+        public Dictionary<string, object> BindSettlement()
+        {
+            return objCorporateOnBoarding.BindSettlement();
+
+        }
     }
 }

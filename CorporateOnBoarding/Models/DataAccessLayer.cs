@@ -104,7 +104,7 @@ namespace CorporateOnBoarding.Models
                 @XmlCorporateEntity += "<dtXml ";
                 @XmlCorporateEntity += " CustomerName=" + @"""" + SaveRequest.txtCustomerName + @"""";
                 @XmlCorporateEntity += " CustomerAddress=" + @"""" + SaveRequest.txtCustomerAddress + @"""";
-                // @XmlCorporateEntity += " BankID=" + @"""" + SaveRequest.txtCustomerAddress + @"""";
+                @XmlCorporateEntity += " BankID=" + @"""" + SaveRequest.BankId + @"""";
                 // @XmlCorporateEntity += " SubMemberBankID=" + @"""" + SaveRequest.txtCustomerAddress + @"""";
                 @XmlCorporateEntity += " Country=" + @"""" + SaveRequest.ddlCountry  + @"""";
                 @XmlCorporateEntity += " State=" + @"""" + SaveRequest.ddlState + @"""";
@@ -113,7 +113,7 @@ namespace CorporateOnBoarding.Models
                 @XmlCorporateEntity += " UtilityCodeSec=" + @"""" + SaveRequest.txtUtilityCode + @"""";
                 @XmlCorporateEntity += " UtilityCodeThird=" + @"""" + SaveRequest.txtUtilityCode + @"""";
                 @XmlCorporateEntity += " UtilityCodeFourth=" + @"""" + SaveRequest.txtUtilityCode + @"""";
-                // @XmlCorporateEntity += " BusinessSegmentCode=" + @"""" + SaveRequest.txtCustomerAddress + @"""";
+                @XmlCorporateEntity += " BusinessSegmentCode=" + @"""" + SaveRequest.BusinessSegmentCode + @"""";
                 // @XmlCorporateEntity += " RMID=" + @"""" + SaveRequest.txtCustomerAddress + @"""";
                 @XmlCorporateEntity += " PSMID=" + @"""" + SaveRequest.ddlPSM + @"""";
                 @XmlCorporateEntity += " ContactPersonFirst=" + @"""" + SaveRequest.txtContactPerson1 + @"""";
@@ -301,69 +301,26 @@ namespace CorporateOnBoarding.Models
                 @XmlBilling_OtherDetailsData = "<dtXml>";
                 @XmlBilling_OtherDetailsData += "<dtXml ";
 
-                if (SaveRequest.BillingContactPerson != "")
-                { @XmlBilling_OtherDetailsData += " BillingContactPerson=" + @"""" + SaveRequest.BillingContactPerson + @""""; }
-                else { @XmlBilling_OtherDetailsData += " BillingContactPerson=" + @"""" + "" + @""""; }
-
-                if (SaveRequest.BillingDesignation != "")
-                { @XmlBilling_OtherDetailsData += " BillingDesignation=" + @"""" + SaveRequest.BillingDesignation + @""""; }
-                else { @XmlBilling_OtherDetailsData += " BillingDesignation=" + @"""" + "" + @""""; }
-
-                if (SaveRequest.BillingContactNo != "")
-                { @XmlBilling_OtherDetailsData += " BillingContactNo=" + @"""" + SaveRequest.BillingContactNo + @""""; }
-                else { @XmlBilling_OtherDetailsData += " BillingContactNo=" + @"""" + "" + @""""; }
-
-                if (SaveRequest.BillingFaxNo != "")
-                { @XmlBilling_OtherDetailsData += " BillingFaxNo=" + @"""" + SaveRequest.BillingFaxNo + @""""; }
-                else { @XmlBilling_OtherDetailsData += " BillingFaxNo=" + @"""" + "" + @""""; }
-              
-                if (SaveRequest.BillingAddress != "")
-                { @XmlBilling_OtherDetailsData += " BillingAddress=" + @"""" + SaveRequest.BillingAddress + @""""; }
-                else { @XmlBilling_OtherDetailsData += " BillingAddress=" + @"""" + "" + @""""; }
-
-                if (SaveRequest.PickupContactPerson != "")
-                { @XmlBilling_OtherDetailsData += " PickupContactPerson=" + @"""" + SaveRequest.PickupContactPerson + @""""; }
-                else { @XmlBilling_OtherDetailsData += " PickupContactPerson=" + @"""" + "" + @""""; }
-
-                if (SaveRequest.PickupLocationAddress != "")
-                { @XmlBilling_OtherDetailsData += " PickupLocationAddress=" + @"""" + SaveRequest.PickupLocationAddress + @""""; }
-                else { @XmlBilling_OtherDetailsData += " PickupLocationAddress=" + @"""" + "" + @""""; }
-
-                if (SaveRequest.ddlArrangmentDays != "")
-                { @XmlBilling_OtherDetailsData += " ddlArrangmentDays=" + @"""" + SaveRequest.ddlArrangmentDays + @""""; }
-                else { @XmlBilling_OtherDetailsData += " ddlArrangmentDays=" + @"""" + "" + @""""; }
-
-                if (SaveRequest.CommMail_Primary != "")
-                { @XmlBilling_OtherDetailsData += " CommMail_Primary=" + @"""" + SaveRequest.CommMail_Primary + @""""; }
-                else { @XmlBilling_OtherDetailsData += " CommMail_Primary=" + @"""" + "" + @""""; }
-
-                if (SaveRequest.CommMail_Billing != "")
-                { @XmlBilling_OtherDetailsData += " CommMail_Billing=" + @"""" + SaveRequest.CommMail_Billing + @""""; }
-                else { @XmlBilling_OtherDetailsData += " CommMail_Billing=" + @"""" + "" + @""""; }
-
-                if (SaveRequest.ChargeDebitAccNo != "")
-                { @XmlBilling_OtherDetailsData += " ChargeDebitAccNo=" + @"""" + SaveRequest.ChargeDebitAccNo + @""""; }
-                else { @XmlBilling_OtherDetailsData += " ChargeDebitAccNo=" + @"""" + "" + @""""; }
-
-                if (SaveRequest.BankCorpID != "")
-                { @XmlBilling_OtherDetailsData += " BankCorpID=" + @"""" + SaveRequest.BankCorpID + @""""; }
-                else { @XmlBilling_OtherDetailsData += " BankCorpID=" + @"""" + "" + @""""; }
-
-                if (SaveRequest.BranchName != "")
-                { @XmlBilling_OtherDetailsData += " BranchName=" + @"""" + SaveRequest.BranchName + @""""; }
-                else { @XmlBilling_OtherDetailsData += " BranchName=" + @"""" + "" + @""""; }
-
-                if (SaveRequest.BranchCode != "")
-                { @XmlBilling_OtherDetailsData += " BranchCode=" + @"""" + SaveRequest.BranchCode + @""""; }
-                else { @XmlBilling_OtherDetailsData += " BranchCode=" + @"""" + "" + @""""; }
-
-                if (SaveRequest.IFSC != "")
-                { @XmlBilling_OtherDetailsData += " IFSC=" + @"""" + SaveRequest.IFSC + @""""; }
-                else { @XmlBilling_OtherDetailsData += " IFSC=" + @"""" + "" + @""""; }
-
-                if (SaveRequest.Settlement != "")
-                { @XmlBilling_OtherDetailsData += " Settlement=" + @"""" + SaveRequest.Settlement + @""""; }
-                else { @XmlBilling_OtherDetailsData += " Settlement=" + @"""" + "" + @""""; }
+                @XmlBilling_OtherDetailsData += " BillingContactPerson=" + @"""" + SaveRequest.BillingContactPerson + @"""";             
+                @XmlBilling_OtherDetailsData += " BillingDesignation=" + @"""" + SaveRequest.BillingDesignation + @""""; 
+                @XmlBilling_OtherDetailsData += " BillingContactNo=" + @"""" + SaveRequest.BillingContactNo + @""""; 
+                @XmlBilling_OtherDetailsData += " BillingFaxNo=" + @"""" + SaveRequest.BillingFaxNo + @""""; 
+                @XmlBilling_OtherDetailsData += " BillingAddress=" + @"""" + SaveRequest.BillingAddress + @"""";  
+                @XmlBilling_OtherDetailsData += " PickupContactPerson=" + @"""" + SaveRequest.PickupContactPerson + @""""; 
+                @XmlBilling_OtherDetailsData += " PickupLocationAddress=" + @"""" + SaveRequest.PickupLocationAddress + @""""; 
+                if (SaveRequest.ddlArrangmentDays == "")
+                { @XmlBilling_OtherDetailsData += " ddlArrangmentDays=" + @"""" + "0" + @""""; }
+                else { @XmlBilling_OtherDetailsData += " ddlArrangmentDays=" + @"""" + SaveRequest.ddlArrangmentDays + @""""; }
+                @XmlBilling_OtherDetailsData += " CommMail_Primary=" + @"""" + SaveRequest.CommMail_Primary + @"""";
+                @XmlBilling_OtherDetailsData += " CommMail_Billing=" + @"""" + SaveRequest.CommMail_Billing + @""""; 
+                @XmlBilling_OtherDetailsData += " ChargeDebitAccNo=" + @"""" + SaveRequest.ChargeDebitAccNo + @"""";
+                @XmlBilling_OtherDetailsData += " BankCorpID=" + @"""" + SaveRequest.BankCorpID + @"""";
+                @XmlBilling_OtherDetailsData += " BranchName=" + @"""" + SaveRequest.BranchName + @"""";
+                @XmlBilling_OtherDetailsData += " BranchCode=" + @"""" + SaveRequest.BranchCode + @"""";
+                @XmlBilling_OtherDetailsData += " IFSC=" + @"""" + SaveRequest.IFSC + @""""; 
+                if (SaveRequest.Settlement == "")
+                { @XmlBilling_OtherDetailsData += " Settlement=" + @"""" + "0"  + @""""; }
+                else { @XmlBilling_OtherDetailsData += " Settlement=" + @"""" + SaveRequest.Settlement + @""""; }
 
                 @XmlBilling_OtherDetailsData += " />";
                 @XmlBilling_OtherDetailsData += "</dtXml>";
@@ -371,7 +328,7 @@ namespace CorporateOnBoarding.Models
                 //---- End Save Billing/Other Details XML Code -------------//
 
 
-                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<Country>().Execute("@QueryType", "@BankID", "@SubMemberBank", "@XmlPhysicalMandateData", "@XmlEMandateData", "@XmlAadharMandateData", "@XmlDirectDebitMandateData", "@XmlDebitPresentationData", "@XmlUPICollectionData", "@XmlBBPSData", "@XmlAPBSData", "@XmlBilling_OtherDetailsData", "@AppId", "@EntityId", "@UserId","@XmlCorporateEntity", "@XmlCorporateFinancial", "@XmlContactPersonArray", "SaveData", "1", "2", @XmlPhysicalMandateData, @XmlEMandateData, @XmlAadharMandateData, @XmlDirectDebitMandateData, @XmlDebitPresentationData, @XmlUPICollectionData, @XmlBBPSData, @XmlAPBSData, @XmlBilling_OtherDetailsData, "123456", "2", "2", @XmlCorporateEntity,@XmlCorporateFinancial, @XmlContactPersonArray));
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<Success>().Execute("@QueryType", "@BankID", "@SubMemberBank", "@XmlPhysicalMandateData", "@XmlEMandateData", "@XmlAadharMandateData", "@XmlDirectDebitMandateData", "@XmlDebitPresentationData", "@XmlUPICollectionData", "@XmlBBPSData", "@XmlAPBSData", "@XmlBilling_OtherDetailsData", "@AppId", "@EntityId", "@UserId","@XmlCorporateEntity", "@XmlCorporateFinancial", "@XmlContactPersonArray", "SaveData", "1", "2", @XmlPhysicalMandateData, @XmlEMandateData, @XmlAadharMandateData, @XmlDirectDebitMandateData, @XmlDebitPresentationData, @XmlUPICollectionData, @XmlBBPSData, @XmlAPBSData, @XmlBilling_OtherDetailsData, "123456", Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(SaveRequest.EntityId.Replace("_", "%"))), Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(SaveRequest.UserId.Replace("_", "%"))), @XmlCorporateEntity,@XmlCorporateFinancial, @XmlContactPersonArray));
                 //var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<Country>().Execute("@QueryType", "@BankID", "@SubMemberBank", "@XmlPhysicalMandateData", "@XmlEMandateData", "@XmlAadharMandateData", "@XmlDirectDebitMandateData", "@XmlDebitPresentationData", "@XmlUPICollectionData", "@XmlBBPSData", "@XmlAPBSData", "@AppId", "@EntityId","@UserId", "BindPSM",SaveRequest.BankId, SaveRequest.SubMemberId, @XmlPhysicalMandateData, @XmlEMandateData, @XmlAadharMandateData, @XmlDirectDebitMandateData, @XmlDebitPresentationData, @XmlUPICollectionData, @XmlBBPSData, @XmlAPBSData, SaveRequest.UtilityCode, SaveRequest.UtilityCode, Dbsecurity.Decrypt(SaveRequest.UtilityCode), Dbsecurity.Decrypt(SaveRequest.EntityId), Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(SaveRequest.UserId.Replace("_", "%")))));
                 return Result;
             }
@@ -386,6 +343,45 @@ namespace CorporateOnBoarding.Models
             try
             {
                 var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<BindAllCorporateGrid>().Execute("@QueryType", "@UserId", "@EntityId", "BindAllCorporateGrid","2","2" ));  //Data.UserId,Data.EntityId
+                return Result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Dictionary<string, object> BindBank()
+        {
+            try
+            {
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<BindBank>().Execute("@QueryType", "BindBank"));
+                return Result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Dictionary<string, object> BindBusinessSegmentCode()
+        {
+            try
+            {
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<BindBusinessSegmentCode>().Execute("@QueryType", "BindBusinessSegmentCode"));
+                return Result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Dictionary<string, object> BindSettlement()
+        {
+            try
+            {
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<BindSettlement>().Execute("@QueryType", "BindSettlement"));
                 return Result;
             }
             catch (Exception ex)
