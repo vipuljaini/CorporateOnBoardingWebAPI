@@ -380,5 +380,18 @@ namespace CorporateOnBoarding.Models
                 throw ex;
             }
         }
+
+        public Dictionary<string, object> BindAllCorporateGrid(PSMRequest Data)
+        {
+            try
+            {
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<BindAllCorporateGrid>().Execute("@QueryType", "@UserId", "@EntityId", "BindAllCorporateGrid","2","2" ));  //Data.UserId,Data.EntityId
+                return Result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

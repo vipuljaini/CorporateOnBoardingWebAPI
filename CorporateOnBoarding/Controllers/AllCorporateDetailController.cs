@@ -77,5 +77,14 @@ namespace CorporateOnBoarding.Controllers
             return objCorporateOnBoarding.SaveData(SaveRequest);
 
         }
+
+        [HttpPost]
+        [Route("api/CorporateOnBoarding/BindAllCorporateGrid")]
+        public Dictionary<string, object> BindAllCorporateGrid([FromBody] PSMRequest Data)
+        {
+            return objCorporateOnBoarding.BindAllCorporateGrid(Data);
+
+        }
+
     }
 }
