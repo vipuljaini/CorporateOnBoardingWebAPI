@@ -389,5 +389,21 @@ namespace CorporateOnBoarding.Models
                 throw ex;
             }
         }
+
+        public Dictionary<string, object> EditData([FromBody] DataSaveRequest SaveRequest)
+        {
+            try
+            {
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<Success>().Execute("@QueryType", "EditData"));
+                //var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<Country>().Execute("@QueryType", "@BankID", "@SubMemberBank", "@XmlPhysicalMandateData", "@XmlEMandateData", "@XmlAadharMandateData", "@XmlDirectDebitMandateData", "@XmlDebitPresentationData", "@XmlUPICollectionData", "@XmlBBPSData", "@XmlAPBSData", "@AppId", "@EntityId","@UserId", "BindPSM",SaveRequest.BankId, SaveRequest.SubMemberId, @XmlPhysicalMandateData, @XmlEMandateData, @XmlAadharMandateData, @XmlDirectDebitMandateData, @XmlDebitPresentationData, @XmlUPICollectionData, @XmlBBPSData, @XmlAPBSData, SaveRequest.UtilityCode, SaveRequest.UtilityCode, Dbsecurity.Decrypt(SaveRequest.UtilityCode), Dbsecurity.Decrypt(SaveRequest.EntityId), Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(SaveRequest.UserId.Replace("_", "%")))));
+                return Result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        
+        }
+
     }
 }
