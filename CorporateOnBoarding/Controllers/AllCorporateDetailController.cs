@@ -109,5 +109,13 @@ namespace CorporateOnBoarding.Controllers
             return objCorporateOnBoarding.BindSettlement();
 
         }
+
+        [HttpGet]
+        [Route("api/CorporateOnBoarding/EditData")]
+        public Dictionary<string, object> EditData([FromBody] DataSaveRequest Data)
+        {
+            return objCorporateOnBoarding.EditData(Data);
+
+        }
     }
 }
