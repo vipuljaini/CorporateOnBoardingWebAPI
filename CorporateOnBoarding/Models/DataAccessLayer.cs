@@ -391,11 +391,19 @@ namespace CorporateOnBoarding.Models
             }
         }
 
-        public Dictionary<string, object> EditData([FromBody] PSMRequest Data)
+
+        public Dictionary<string, object> EditData([FromBody] EditRequest Data)
         {
             try
             {
-                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<Billing_OtherDetailsFields>().With<ServiceOfferedFields>().Execute("@QueryType", "@TCEDID2", "@UserId","@EntityId", "EditData", Data.TCEDID, Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%"))), Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.EntityId.Replace("_", "%")))));
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<CorporateEntityDetails>().With<CorporateFinancialDetails>().With<CorpOnBoardingContactPerson>().Execute("@QueryType", "@TCEDID2", "@UserId", "@EntityId", "Edit", Data.TCEDID, Dbsecurity.Decrypt(Data.UserId),Dbsecurity.Decrypt(Data.EntityId)));
+
+      //  public Dictionary<string, object> EditData([FromBody] PSMRequest Data)
+       // {
+           // try
+           // {
+               // var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<Billing_OtherDetailsFields>().With<ServiceOfferedFields>().Execute("@QueryType", "@TCEDID2", "@UserId","@EntityId", "EditData", Data.TCEDID, Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%"))), Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.EntityId.Replace("_", "%")))));
+
                 //var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<Country>().Execute("@QueryType", "@BankID", "@SubMemberBank", "@XmlPhysicalMandateData", "@XmlEMandateData", "@XmlAadharMandateData", "@XmlDirectDebitMandateData", "@XmlDebitPresentationData", "@XmlUPICollectionData", "@XmlBBPSData", "@XmlAPBSData", "@AppId", "@EntityId","@UserId", "BindPSM",SaveRequest.BankId, SaveRequest.SubMemberId, @XmlPhysicalMandateData, @XmlEMandateData, @XmlAadharMandateData, @XmlDirectDebitMandateData, @XmlDebitPresentationData, @XmlUPICollectionData, @XmlBBPSData, @XmlAPBSData, SaveRequest.UtilityCode, SaveRequest.UtilityCode, Dbsecurity.Decrypt(SaveRequest.UtilityCode), Dbsecurity.Decrypt(SaveRequest.EntityId), Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(SaveRequest.UserId.Replace("_", "%")))));
                 return Result;
             }
