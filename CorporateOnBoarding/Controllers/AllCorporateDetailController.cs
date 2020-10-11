@@ -110,9 +110,9 @@ namespace CorporateOnBoarding.Controllers
 
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("api/CorporateOnBoarding/EditData")]
-        public Dictionary<string, object> EditData([FromBody] DataSaveRequest Data)
+        public Dictionary<string, object> EditData([FromBody] PSMRequest Data)
         {
             return objCorporateOnBoarding.EditData(Data);
 
