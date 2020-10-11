@@ -38,7 +38,6 @@ namespace CorporateOnBoarding.Models
     {
         public Nullable<Int32> SettlementId { get; set; }
         public string SettlementName { get; set; }
-
     }
 
     public class BindAllCorporateGrid
@@ -170,5 +169,59 @@ namespace CorporateOnBoarding.Models
         public string ContactPesonContact { get; set; }
         public string ContactPesonFax { get; set; }
         public string ContactPesonAddress { get; set; }
+    }
+
+    public class EditRequest
+    {
+        public string TCEDID { get; set; }
+        public string UserId { get; set; }
+        public string EntityId { get; set; }
+    }
+
+    public class CorporateEntityDetails
+    {
+        public string CustomerName { get; set; }
+        public string CustomerAddress { get; set; }
+        public Int32 BankID { get; set; }
+        //public Int32 SubMemberBankID { get; set; }
+        public Int32 Country { get; set; }
+        public Int32 State { get; set; }
+        public Int32 City { get; set; }
+        public string UtilityCodeFirst { get; set; }
+        public string UtilityCodeSec { get; set; }
+        public string UtilityCodeThird { get; set; }
+        public string UtilityCodeFourth { get; set; }
+        public Int32 BusinessSegmentCode { get; set; }
+        public Int32 RMID { get; set; }
+        public Int32 PSMID { get; set; }
+        public string ContactPersonFirst { get; set; }
+        public string ContactPersonDesg { get; set; }
+        public string ContactNo { get; set; }
+        public string FAX { get; set; }
+        public string Arrangement { get; set; }
+        public string PickUpPoint { get; set; }
+        public string Location { get; set; }
+        public string ContactPesonSecond { get; set; }
+        public string ContactPersonName { get; set; }
+        public string CustomerEmail { get; set; }
+    }
+
+    public class CorporateFinancialDetails
+    {
+        public string PAN { get; set; }
+        public string TAN { get; set; }
+        public string GST { get; set; }
+        public Int32 AccountHoldingRegionalMember { get; set; }
+        public Int32 AccuntHoldingPSM { get; set; }
+    }
+
+
+    public class CorpOnBoardingContactPerson
+    {
+        public string Name { get; set; }
+        public string Designation { get; set; }
+        public string ContactNo { get; set; }
+        public string FaxNo { get; set; }
+        public string Address { get; set; }
     }
 }

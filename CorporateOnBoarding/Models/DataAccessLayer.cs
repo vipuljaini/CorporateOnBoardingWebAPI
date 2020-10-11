@@ -390,11 +390,11 @@ namespace CorporateOnBoarding.Models
             }
         }
 
-        public Dictionary<string, object> EditData([FromBody] DataSaveRequest SaveRequest)
+        public Dictionary<string, object> EditData([FromBody] EditRequest Data)
         {
             try
             {
-                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<Success>().Execute("@QueryType", "EditData"));
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<CorporateEntityDetails>().With<CorporateFinancialDetails>().With<CorpOnBoardingContactPerson>().Execute("@QueryType", "@TCEDID2", "@UserId", "@EntityId", "Edit", Data.TCEDID, Dbsecurity.Decrypt(Data.UserId),Dbsecurity.Decrypt(Data.EntityId)));
                 //var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<Country>().Execute("@QueryType", "@BankID", "@SubMemberBank", "@XmlPhysicalMandateData", "@XmlEMandateData", "@XmlAadharMandateData", "@XmlDirectDebitMandateData", "@XmlDebitPresentationData", "@XmlUPICollectionData", "@XmlBBPSData", "@XmlAPBSData", "@AppId", "@EntityId","@UserId", "BindPSM",SaveRequest.BankId, SaveRequest.SubMemberId, @XmlPhysicalMandateData, @XmlEMandateData, @XmlAadharMandateData, @XmlDirectDebitMandateData, @XmlDebitPresentationData, @XmlUPICollectionData, @XmlBBPSData, @XmlAPBSData, SaveRequest.UtilityCode, SaveRequest.UtilityCode, Dbsecurity.Decrypt(SaveRequest.UtilityCode), Dbsecurity.Decrypt(SaveRequest.EntityId), Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(SaveRequest.UserId.Replace("_", "%")))));
                 return Result;
             }
