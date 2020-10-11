@@ -15,12 +15,13 @@ namespace CorporateOnBoarding.Models
         public string EntityId { get; set; }
         public string BankId { get; set; }
         public string SubMemberId { get; set; }
+        public string TCEDID { get; set; }
     }
 
     public class Success
     {
         public Nullable<Int32> Result { get; set; }
-       
+
     }
     public class BindBank
     {
@@ -224,4 +225,47 @@ namespace CorporateOnBoarding.Models
         public string FaxNo { get; set; }
         public string Address { get; set; }
     }
+
+    public class ServiceOfferedFields
+    {
+        public Nullable<Boolean> IsPhysicalMandate { get; set; }
+        public Nullable<Boolean> IsEMandate { get; set; }
+        public Nullable<Boolean> IsAadharBasedMandate { get; set; }
+        public Nullable<Boolean> IsDirectDebitMandate { get; set; }
+        public Nullable<Boolean> IsNACHTransPresent { get; set; }
+        public Nullable<Boolean> IsUPICollection { get; set; }
+        public Nullable<Boolean> IsBBPS { get; set; }
+        public Nullable<Boolean> IsAPBS { get; set; }
+        public Nullable<decimal> PerTransCharge { get; set; }
+        public Nullable<decimal> Setup_IntegrationCharge { get; set; }
+        public Nullable<decimal> UserIdChargePerMonth { get; set; }
+        public Nullable<decimal> TrainingCharge { get; set; }
+        public Nullable<decimal> AnnualMaintenance { get; set; }
+    }
+
+    public class Billing_OtherDetailsFields
+    {
+        public string BillingContactPerson { get; set; }
+        public string BillingDesignation { get; set; }
+        public string BillingContactNo { get; set; }
+        public string BillingFaxNo { get; set; }
+        public string BillingAddress { get; set; }
+        public string PickupContactPerson { get; set; }
+        public string PickupLocationAddress { get; set; }
+        public Nullable<Int32> ArrangmentDays { get; set; }
+        public string CommuMail_Primary { get; set; }
+        public string CommuMail_Billing { get; set; }
+        public string ChargeDebitAccNo { get; set; }
+        public string BankCorpID { get; set; }
+        public string BranchName { get; set; }
+        public string BranchCode { get; set; }
+        public string IFSC { get; set; }
+        public Nullable<Int64> Settlement { get; set; }
+    }
 }
+
+
+
+
+
+
