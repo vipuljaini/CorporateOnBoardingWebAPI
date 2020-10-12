@@ -61,6 +61,7 @@ namespace CorporateOnBoarding.Models
         public string AppId { get; set; }
         public string UserId { get; set; }
         public string EntityId { get; set; }
+        public string TCEDID { get; set; }
 
         public string BankId { get; set; }
         public string BusinessSegmentCode { get; set; }

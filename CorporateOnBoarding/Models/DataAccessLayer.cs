@@ -329,9 +329,19 @@ namespace CorporateOnBoarding.Models
                 //---- End Save Billing/Other Details XML Code -------------//
 
 
-                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<Success>().Execute("@QueryType", "@BankID", "@SubMemberBank", "@XmlPhysicalMandateData", "@XmlEMandateData", "@XmlAadharMandateData", "@XmlDirectDebitMandateData", "@XmlDebitPresentationData", "@XmlUPICollectionData", "@XmlBBPSData", "@XmlAPBSData", "@XmlBilling_OtherDetailsData", "@AppId", "@EntityId", "@UserId","@XmlCorporateEntity", "@XmlCorporateFinancial", "@XmlContactPersonArray", "SaveData", "1", "2", @XmlPhysicalMandateData, @XmlEMandateData, @XmlAadharMandateData, @XmlDirectDebitMandateData, @XmlDebitPresentationData, @XmlUPICollectionData, @XmlBBPSData, @XmlAPBSData, @XmlBilling_OtherDetailsData, "123456", Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(SaveRequest.EntityId.Replace("_", "%"))), Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(SaveRequest.UserId.Replace("_", "%"))), @XmlCorporateEntity,@XmlCorporateFinancial, @XmlContactPersonArray));
-                //var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<Country>().Execute("@QueryType", "@BankID", "@SubMemberBank", "@XmlPhysicalMandateData", "@XmlEMandateData", "@XmlAadharMandateData", "@XmlDirectDebitMandateData", "@XmlDebitPresentationData", "@XmlUPICollectionData", "@XmlBBPSData", "@XmlAPBSData", "@AppId", "@EntityId","@UserId", "BindPSM",SaveRequest.BankId, SaveRequest.SubMemberId, @XmlPhysicalMandateData, @XmlEMandateData, @XmlAadharMandateData, @XmlDirectDebitMandateData, @XmlDebitPresentationData, @XmlUPICollectionData, @XmlBBPSData, @XmlAPBSData, SaveRequest.UtilityCode, SaveRequest.UtilityCode, Dbsecurity.Decrypt(SaveRequest.UtilityCode), Dbsecurity.Decrypt(SaveRequest.EntityId), Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(SaveRequest.UserId.Replace("_", "%")))));
-                return Result;
+
+                if (SaveRequest.TCEDID == "")
+                {
+
+                    var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<Success>().Execute("@QueryType", "@BankID", "@SubMemberBank", "@XmlPhysicalMandateData", "@XmlEMandateData", "@XmlAadharMandateData", "@XmlDirectDebitMandateData", "@XmlDebitPresentationData", "@XmlUPICollectionData", "@XmlBBPSData", "@XmlAPBSData", "@XmlBilling_OtherDetailsData", "@AppId", "@EntityId", "@UserId", "@XmlCorporateEntity", "@XmlCorporateFinancial", "@XmlContactPersonArray", "SaveData", "1", "2", @XmlPhysicalMandateData, @XmlEMandateData, @XmlAadharMandateData, @XmlDirectDebitMandateData, @XmlDebitPresentationData, @XmlUPICollectionData, @XmlBBPSData, @XmlAPBSData, @XmlBilling_OtherDetailsData, "123456", Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(SaveRequest.EntityId.Replace("_", "%"))), Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(SaveRequest.UserId.Replace("_", "%"))), @XmlCorporateEntity, @XmlCorporateFinancial, @XmlContactPersonArray));
+                    return Result;
+                }//var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<Country>().Execute("@QueryType", "@BankID", "@SubMemberBank", "@XmlPhysicalMandateData", "@XmlEMandateData", "@XmlAadharMandateData", "@XmlDirectDebitMandateData", "@XmlDebitPresentationData", "@XmlUPICollectionData", "@XmlBBPSData", "@XmlAPBSData", "@AppId", "@EntityId","@UserId", "BindPSM",SaveRequest.BankId, SaveRequest.SubMemberId, @XmlPhysicalMandateData, @XmlEMandateData, @XmlAadharMandateData, @XmlDirectDebitMandateData, @XmlDebitPresentationData, @XmlUPICollectionData, @XmlBBPSData, @XmlAPBSData, SaveRequest.UtilityCode, SaveRequest.UtilityCode, Dbsecurity.Decrypt(SaveRequest.UtilityCode), Dbsecurity.Decrypt(SaveRequest.EntityId), Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(SaveRequest.UserId.Replace("_", "%")))));
+                else
+                {
+                    var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<Success>().Execute("@QueryType", "@BankID", "@SubMemberBank", "@XmlPhysicalMandateData", "@XmlEMandateData", "@XmlAadharMandateData", "@XmlDirectDebitMandateData", "@XmlDebitPresentationData", "@XmlUPICollectionData", "@XmlBBPSData", "@XmlAPBSData", "@XmlBilling_OtherDetailsData", "@AppId", "@EntityId", "@UserId", "@XmlCorporateEntity", "@XmlCorporateFinancial", "@XmlContactPersonArray", "@TCEDID2", "UpdateData", "1", "2", @XmlPhysicalMandateData, @XmlEMandateData, @XmlAadharMandateData, @XmlDirectDebitMandateData, @XmlDebitPresentationData, @XmlUPICollectionData, @XmlBBPSData, @XmlAPBSData, @XmlBilling_OtherDetailsData, "123456", Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(SaveRequest.EntityId.Replace("_", "%"))), Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(SaveRequest.UserId.Replace("_", "%"))), @XmlCorporateEntity, @XmlCorporateFinancial, @XmlContactPersonArray, SaveRequest.TCEDID));
+                    return Result;
+                }
+
             }
             catch (Exception ex)
             {
@@ -396,7 +406,7 @@ namespace CorporateOnBoarding.Models
         {
             try
             {
-                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<CorporateEntityDetails>().With<CorporateFinancialDetails>().With<CorpOnBoardingContactPerson>().Execute("@QueryType", "@TCEDID2", "@UserId", "@EntityId", "Edit", Data.TCEDID, Dbsecurity.Decrypt(Data.UserId),Dbsecurity.Decrypt(Data.EntityId)));
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_CorporateOnBoarding]").With<CorporateEntityDetails>().With<CorporateFinancialDetails>().With<CorpOnBoardingContactPerson>().With<Billing_OtherDetailsFields>().With<ServiceOfferedFields>().Execute("@QueryType", "@TCEDID2", "@UserId", "@EntityId", "Edit", Data.TCEDID, Dbsecurity.Decrypt(Data.UserId),Dbsecurity.Decrypt(Data.EntityId)));
 
       //  public Dictionary<string, object> EditData([FromBody] PSMRequest Data)
        // {
